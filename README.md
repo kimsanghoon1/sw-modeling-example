@@ -14,3 +14,7 @@ npm run dev
 ```
 
 ### Go to http://localhost:8081/alltabs.html
+
+## Documentation
+
+https://www.slideshare.net/pongsor/building-multi-tenancy-enterprise-applications
