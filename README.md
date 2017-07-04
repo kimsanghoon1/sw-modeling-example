@@ -15,6 +15,10 @@ npm run dev
 
 ### Go to http://localhost:8081/alltabs.html
 
+### To mashup components, go to http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/mashup/test.html
+
+and drag form or grid component to the canvas, and enter the name of class - com.autoinsurance.Customer
+
 ## Documentation
 https://github.com/TheOpenCloudEngine/micro-service-architecture-vuejs/wiki
 https://www.slideshare.net/pongsor/building-multi-tenancy-enterprise-applications
