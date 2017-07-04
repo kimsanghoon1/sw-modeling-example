@@ -18,3 +18,21 @@ npm run dev
 ## Documentation
 
 https://www.slideshare.net/pongsor/building-multi-tenancy-enterprise-applications
+
+
+## Frequenctly Asked Questions
+
+### intelli-j
+- 붉은색 오류:  Setup SDK 상단 메뉴 클릭해서 jdk1.8잡아줌
+
+- maven import Changes -> yes
+- maven menu toolbar --> reimport 버튼
+
+### server configuration / setting
+- pom.xml
+- WebConfig.java 를 다시 받아 수정.
+
+- 8080 충돌시 -> services.msc 실행 > 오라클 에이젠트 중지
+### maven 
+- Class Not Found -> .m2/repository all delete
+- Repository Not Found -> remove the .m2/setting.xml
