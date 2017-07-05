@@ -37,7 +37,7 @@ Test service through POSTMAN
 
 ```
 var jsonData = JSON.parse(responseBody);
-tests["첫번째 고객은 장진영이어야 합니다"] = jsonData._embedded.customer[0].firstName === "jjy";
+tests["첫번째 고객은 장진영이어야 합니다"] = jsonData._embedded.customer[0].firstName === "장진영";
 
 tests["Response time is less than 100ms"] = responseTime < 100;
 ```
