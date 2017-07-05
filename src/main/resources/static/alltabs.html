@@ -27,12 +27,18 @@
 <script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/object-form.js"></script>
 <script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/service-locator.js"></script>
 
+<script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/iam-client/jqeury.js" charset="utf-8"></script>
+<script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/iam-client/iam-client.js" charset="utf-8"></script>
+<script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/iam-login.js"></script>
+
 
 <div id="app">
 
+    <iam-login iam-server="http://iam.uengine.io:8080" ref="login" v-if="!loggedIn"></iam-login>
+
     <service-locator host="http://localhost:8080" ref="backend"></service-locator>
 
-    <md-tabs id="tab" @change="tabChanged">
+    <md-tabs id="tab" @change="tabChanged" >
         <md-tab id="name-and-address" md-label="Name And Address">
             <object-form ref="customer-form"
                          java="com.autoinsurance.Customer"
@@ -87,8 +93,6 @@
         </md-tab>
 
     </md-tabs>
-
-
 
 </div>
 
