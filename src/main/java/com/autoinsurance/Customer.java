@@ -25,8 +25,8 @@ import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Customer")
-//@Multitenant
-//@TenantDiscriminatorColumn(name = "TENANTID", contextProperty = "tenant-id")
+@Multitenant
+@TenantDiscriminatorColumn(name = "TENANTID", contextProperty = "tenant-id")
 public class Customer implements Serializable {
 	public Customer() {
 	}

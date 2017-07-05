@@ -5,6 +5,7 @@ import org.metaworks.multitenancy.ClassManager;
 import org.metaworks.multitenancy.CouchbaseMetadataService;
 import org.metaworks.multitenancy.DefaultMetadataService;
 import org.metaworks.multitenancy.MetadataService;
+import org.metaworks.multitenancy.tenantawarefilter.TenantAwareFilter;
 import org.metaworks.springboot.configuration.Metaworks4WebConfig;
 import org.metaworks.multitenancy.persistence.MultitenantRepositoryImpl;
 import org.metaworks.rest.MetaworksRestService;
@@ -65,6 +66,11 @@ public class WebConfig extends Metaworks4WebConfig {
     }
 
     @Bean
+    public TenantAwareFilter tenantAwareFilter(){
+        return new TenantAwareFilter();
+    }
+
+    @Bean
     public MetadataService metadataService() {
         DefaultMetadataService metadataService = new DefaultMetadataService();
         metadataService.setResourceManager(resourceManager());
@@ -72,21 +78,21 @@ public class WebConfig extends Metaworks4WebConfig {
         return metadataService;
     }
 
-//    @Bean
-//    public DataSource dataSource() {
-//        //In classpath from spring-boot-starter-web
-//        final Properties pool = new Properties();
-//        pool.put("driverClassName", "com.mysql.jdbc.Driver");
-//        pool.put("url", "jdbc:mysql://localhost:3306/uengine?useUnicode=true&characterEncoding=UTF8&useOldAliasMetadataBehavior=true");
-//        pool.put("username", "root");
-//        pool.put("password", "");
-//        pool.put("minIdle", 1);
-//        try {
-//            return new org.apache.tomcat.jdbc.pool.DataSourceFactory().createDataSource(pool);
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+    @Bean
+    public DataSource dataSource() {
+        //In classpath from spring-boot-starter-web
+        final Properties pool = new Properties();
+        pool.put("driverClassName", "com.mysql.jdbc.Driver");
+        pool.put("url", "jdbc:mysql://localhost:3306/uengine?useUnicode=true&characterEncoding=UTF8&useOldAliasMetadataBehavior=true");
+        pool.put("username", "root");
+        pool.put("password", "");
+        pool.put("minIdle", 1);
+        try {
+            return new org.apache.tomcat.jdbc.pool.DataSourceFactory().createDataSource(pool);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Bean
     @Primary
