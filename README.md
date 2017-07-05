@@ -56,8 +56,8 @@ npm run dev
 and drag form or grid component to the canvas, and enter the name of class - com.autoinsurance.Customer
 
 ## Documentation
-https://github.com/TheOpenCloudEngine/micro-service-architecture-vuejs/wiki
-https://www.slideshare.net/pongsor/building-multi-tenancy-enterprise-applications
+- https://github.com/TheOpenCloudEngine/micro-service-architecture-vuejs/wiki
+- https://www.slideshare.net/pongsor/building-multi-tenancy-enterprise-applications
 
 
 ## Frequenctly Asked Questions
