@@ -13,8 +13,6 @@
  */
 package com.autoinsurance;
 
-import org.metaworks.annotation.Hidden;
-
 import java.io.Serializable;
 import javax.persistence.*;
 @Entity
@@ -38,13 +36,11 @@ public class Vehicle implements Serializable {
 	@Column(name="ModelName", nullable=true, length=255)	
 	private String modelName;
 	
-	public void setModelName(String value) {
-		this.modelName = value;
-	}
+	@Column(name="Type", nullable=false, length=10)	
+	private int type;
 	
-	public String getModelName() {
-		return modelName;
-	}
+	@Column(name="Brand", nullable=true, length=255)	
+	private String brand;
 	
 	private void setId(long value) {
 		setId(new Long(value));
@@ -62,11 +58,34 @@ public class Vehicle implements Serializable {
 		return getId();
 	}
 	
+	public void setModelName(String value) {
+		this.modelName = value;
+	}
+	
+	public String getModelName() {
+		return modelName;
+	}
+	
+	public void setType(int value) {
+		this.type = value;
+	}
+	
+	public int getType() {
+		return type;
+	}
+	
+	public void setBrand(String value) {
+		this.brand = value;
+	}
+	
+	public String getBrand() {
+		return brand;
+	}
+	
 	public void setCustomer(com.autoinsurance.Customer value) {
 		this.customer = value;
 	}
-
-	@Hidden
+	
 	public com.autoinsurance.Customer getCustomer() {
 		return customer;
 	}
