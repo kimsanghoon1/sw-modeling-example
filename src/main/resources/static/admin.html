@@ -31,6 +31,7 @@
 <script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/iam-client/iam-client.js" charset="utf-8"></script>
 <script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/iam-login.js"></script>
 
+<script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/ssp-class.js"></script>
 
 <div id="app">
 
@@ -38,16 +39,25 @@
 
     <service-locator host="http://localhost:8080" ref="backend"></service-locator>
 
-    <object-grid ref="grid"
-                 java="com.autoinsurance.Customer"
-                 :filter-key="searchQuery"
-                 :column-changer="columnChanger"
-                 :online = "true"
-                 :data = "[]"
-                 :options="{pagination: true, toolbar: true}"
-                 service-locator = "backend"
-    >
-    </object-grid>
+    <md-tabs id="tab" @change="tabChanged" v-if="loggedIn">
+        <md-tab id="customers" md-label="Customers">
+
+            <object-grid ref="grid"
+                     java="com.autoinsurance.Customer"
+                     :filter-key="searchQuery"
+                     :column-changer="columnChanger"
+                     :online = "true"
+                     :data = "[]"
+                     :options="{pagination: true, toolbar: true}"
+                     service-locator = "backend"
+                     v-if="loggedIn"
+            >
+            </object-grid>
+        </md-tab>
+        <md-tab id="ssp-customer" md-label="Selfservice - Class management">
+            <ssp-class java="com.autoinsurance.Customer" service-locator="backend"></ssp-class>
+        </md-tab>
+    </md-tabs>
 
 </div>
 
