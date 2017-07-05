@@ -5,6 +5,42 @@
 ```
 mvn spring-boot:run
 ```
+and go to http://localhost:8080 then you will see:
+```
+{
+  "_links" : {
+    "vehicle" : {
+      "href" : "http://localhost:8080/vehicle{?page,size,sort}",
+      "templated" : true
+    },
+    "customer" : {
+      "href" : "http://localhost:8080/customer{?page,size,sort}",
+      "templated" : true
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/profile"
+    }
+  }
+}
+```
+
+Adding a customer through POSTMAN
+Turn the METHOD as: POST
+and set the body as "raw" and "JSON(application/json)"
+and finally enter the body json value as:
+```
+{
+  "firstName": "장진영"
+}
+```
+Test service through POSTMAN
+
+```
+var jsonData = JSON.parse(responseBody);
+tests["첫번째 고객은 장진영이어야 합니다"] = jsonData._embedded.customer[0].firstName === "jjy";
+
+tests["Response time is less than 100ms"] = responseTime < 100;
+```
 
 ### Front-end server (Runs on 8081 or any other port)
 ```
