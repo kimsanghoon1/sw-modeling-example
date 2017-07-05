@@ -25,16 +25,19 @@
 
 <script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/object-grid.js"></script>
 <script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/object-form.js"></script>
+<script src="http://rawgit.com/TheOpenCloudEngine/metaworks4/master/src/main/resources/static/service-locator.js"></script>
 
 
 <div id="app">
 
+    <service-locator host="http://localhost:8080" id="backend"></service-locator>
 
     <md-tabs id="tab">
         <md-tab id="name-and-address" md-label="Name And Address">
             <object-form ref="customer-form"
                          java="com.autoinsurance.Customer"
                          :data = "{}"
+                         :service-locator = "$refs['backend']"
             >
             </object-form>
 
