@@ -66,6 +66,7 @@ public class Customer extends MultitenantEntity {
 	}
 
 	@org.metaworks.annotation.Id
+	@Hidden
 	public Long getId() {
 		return id;
 	}

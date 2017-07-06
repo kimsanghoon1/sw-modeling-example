@@ -78,21 +78,21 @@ public class WebConfig extends Metaworks4WebConfig {
         return metadataService;
     }
 
-    @Bean
-    public DataSource dataSource() {
-        //In classpath from spring-boot-starter-web
-        final Properties pool = new Properties();
-        pool.put("driverClassName", "com.mysql.jdbc.Driver");
-        pool.put("url", "jdbc:mysql://localhost:3306/uengine?useUnicode=true&characterEncoding=UTF8&useOldAliasMetadataBehavior=true");
-        pool.put("username", "root");
-        pool.put("password", "");
-        pool.put("minIdle", 1);
-        try {
-            return new org.apache.tomcat.jdbc.pool.DataSourceFactory().createDataSource(pool);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    @Bean
+//    public DataSource dataSource() {
+//        //In classpath from spring-boot-starter-web
+//        final Properties pool = new Properties();
+//        pool.put("driverClassName", "com.mysql.jdbc.Driver");
+//        pool.put("url", "jdbc:mysql://localhost:3306/uengine?useUnicode=true&characterEncoding=UTF8&useOldAliasMetadataBehavior=true");
+//        pool.put("username", "root");
+//        pool.put("password", "");
+//        pool.put("minIdle", 1);
+//        try {
+//            return new org.apache.tomcat.jdbc.pool.DataSourceFactory().createDataSource(pool);
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     @Bean
     @Primary

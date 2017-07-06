@@ -114,7 +114,7 @@
 
                 if(!this.saved){ //if initial state
                     this.$refs['customer-form'].submit_();
-                    this.$refs['vehicle-form'].data.customer.id = this.$refs['customer-form'].data.ormid;
+                    this.$refs['vehicle-form'].data.customer = this.$refs['customer-form'].data._links.self.href;
                     this.saved = true;
                 }
             }
