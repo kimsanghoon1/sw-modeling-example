@@ -60,6 +60,13 @@ and drag form or grid component to the canvas, and enter the name of class - com
 - https://www.slideshare.net/pongsor/building-multi-tenancy-enterprise-applications
 
 
+## Metaworks Metadata Service
+- login firstly and launch the Java Script console,
+- get the value of 'localStorage["access_token"]' just type it in the console,
+- you may get some string value from the console, copy it.
+- paste the access_token value to the POSTMAN's header tab as key - 'access_token' 
+
+
 ## Frequenctly Asked Questions
 
 ### intelli-j
