@@ -19,15 +19,14 @@ import org.metaworks.annotation.Face;
 import org.metaworks.annotation.Group;
 import org.metaworks.annotation.Hidden;
 import org.metaworks.annotation.Order;
+import org.metaworks.multitenancy.persistence.MultitenantEntity;
 
 import java.io.Serializable;
 import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Customer")
-@Multitenant
-@TenantDiscriminatorColumn(name = "TENANTID", contextProperty = "tenant-id")
-public class Customer implements Serializable {
+public class Customer extends MultitenantEntity {
 	public Customer() {
 	}
 	
@@ -62,10 +61,11 @@ public class Customer implements Serializable {
 		setId(new Long(value));
 	}
 	
-	private void setId(Long value) {
+	public void setId(Long value) {
 		this.id = value;
 	}
-	
+
+	@org.metaworks.annotation.Id
 	public Long getId() {
 		return id;
 	}
