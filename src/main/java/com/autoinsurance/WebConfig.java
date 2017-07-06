@@ -36,7 +36,7 @@ public class WebConfig extends Metaworks4WebConfig {
     public void addCorsMappings(CorsRegistry registry) {
 
         registry.addMapping("/**")
-                .allowedOrigins("*")
+                .allowedOrigins("http://localhost:8082", "http://localhost:8081", "*")
                 .allowedMethods("POST", "GET", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("access_token", "Content-Type");
 
