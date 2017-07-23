@@ -34,7 +34,7 @@
 
 <div id="app">
 
-    <iam-login iam-server="http://iam.uengine.io:8080" ref="login" :logged-in="loggedIn" v-if="!loggedIn"></iam-login>
+    <iam-login iam-server="http://iam.uengine.io:8080" ref="login" id="jyjang@uengine.org" :listener="$root" v-if="!loggedIn"></iam-login>
 
     <service-locator host="http://localhost:8080" ref="backend"></service-locator>
 
@@ -76,6 +76,7 @@
                                  java="com.autoinsurance.Vehicle"
                                  :data = "{customer: {}}"
                                  :event-listeners = "['grid']"
+                                 service-locator = "backend"
                     >
                     </object-form>
                 </md-dialog-content>
@@ -100,12 +101,29 @@
 
     var app = new Vue({
         el: '#app',
-        props: {loggedIn: Boolean},
-        data: function(){
-            return {saved: false, first: true}
+        data: {
+            saved: false, first: true, loggedIn: false
         },
+//        watch: {
+//          "loginResult": function(val){
+//              console.log(val)
+//          }
+//
+//        },
+//
+//        computed: {
+//
+//            logged: function(){
+//
+//                return this.loginResult.loggedIn;
+//            }
+//
+//        },
 
         methods: {
+            onLoggedIn: function(){
+               this.loggedIn = true;
+            },
             tabChanged: function(){
                 if(this.first){
                     this.first = false;
