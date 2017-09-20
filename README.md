@@ -13,6 +13,9 @@ git clone https://github.com/jinyoung/sw-modeling-example.git
 ```
 mvn spring-boot:run
 ```
+
+if you don't have Apache Maven, download and intall Maven: https://blog.outsider.ne.kr/381 
+
 and go to http://localhost:8080 then you will see:
 ```
 {
