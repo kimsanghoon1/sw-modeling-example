@@ -1,5 +1,13 @@
 # sw-modeling-example
 
+## Cloning the repo.
+
+1. download the git client:   https://git-for-windows.github.io/
+1. lauch a terminal and enter 
+```
+git clone https://github.com/jinyoung/sw-modeling-example.git
+```
+
 ## Build and run
 ### Backend server (Runs on 8080)
 ```
