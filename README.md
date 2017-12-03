@@ -92,5 +92,5 @@ and drag form or grid component to the canvas, and enter the name of class - com
 
 - 8080 충돌시 -> services.msc 실행 > 오라클 에이젠트 중지
 ### maven 
-- Class Not Found -> .m2/repository all delete
+- Class Not Found -> remove all the files under .m2/repository/**
 - Repository Not Found -> remove the .m2/setting.xml
