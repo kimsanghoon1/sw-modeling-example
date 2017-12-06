@@ -1,5 +1,9 @@
 # sw-modeling-example
 
+## Prerequieste installations
+
+- https://github.com/TheOpenCloudEngine/uEngine-cloud-server/wiki/Tutorial
+
 ## Cloning the repo.
 
 1. download the git client:   https://git-for-windows.github.io/
